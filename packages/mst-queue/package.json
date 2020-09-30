@@ -62,5 +62,8 @@
     "state management",
     "data structure"
   ],
-  "gitHead": "84e2be5000f9a1b58594b6b8af3e3e3b25a519ed"
+  "gitHead": "38957bca5fdad6f33b29dc295ae6d60a4063cc69",
+  "publishConfig": {
+    "access": "public"
+  }
 }
