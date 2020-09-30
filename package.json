@@ -1,8 +1,9 @@
 {
   "name": "@mst-ds/root",
   "author": "Yurchishin",
+  "private": true,
   "description": "> TODO: description",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/Yurchishin/mst-data-structure",
   "scripts": {
     "crean": "lerna run crean --stream",
@@ -27,5 +28,12 @@
     "eslint": "^7.4.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.1"
-  }
+  },
+  "keywords": [
+    "mobx",
+    "mobx-state-tree",
+    "reactive",
+    "state management",
+    "data structure"
+  ]
 }
