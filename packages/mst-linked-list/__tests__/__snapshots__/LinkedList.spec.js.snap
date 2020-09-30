@@ -1,0 +1,819 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkedList actions append 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions deleteHead 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "1",
+        "value": 2,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions deleteTail 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+]
+`;
+
+exports[`LinkedList actions fromArray 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions prepend 1`] = `
+Array [
+  Object {
+    "head": "3",
+    "nodes": Object {
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions remove head 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions remove head and tail 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
+  },
+]
+`;
+
+exports[`LinkedList actions remove middle 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "3",
+        "value": 1,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList actions remove tail 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
+  },
+]
+`;
+
+exports[`LinkedList actions reverse 1`] = `
+Array [
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "2",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "1",
+        "value": 2,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
+    },
+    "tail": "2",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+  Object {
+    "head": "3",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "1",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": "2",
+        "value": 3,
+      },
+    },
+    "tail": "1",
+  },
+  Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
+    },
+    "tail": "3",
+  },
+]
+`;
+
+exports[`LinkedList model create in model(Todo) 1`] = `
+Object {
+  "todos": Object {
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": Object {
+          "active": false,
+          "name": "name1",
+        },
+      },
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": Object {
+          "active": true,
+          "name": "name2",
+        },
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": Object {
+          "active": false,
+          "name": "name2",
+        },
+      },
+    },
+    "tail": "3",
+  },
+}
+`;
+
+exports[`LinkedList model create in model(int) 1`] = `
+Object {
+  "numbers": Object {
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
+  },
+}
+`;
+
+exports[`LinkedList model create(int) 1`] = `
+Object {
+  "head": null,
+  "nodes": Object {},
+  "tail": null,
+}
+`;

@@ -1,0 +1,56 @@
+{
+  "name": "@mst-ds/mst-linked-list",
+  "version": "0.0.2",
+  "description": "> TODO: description",
+  "author": "Yurchishin",
+  "homepage": "https://github.com/Yurchishin/mst-data-structure",
+  "license": "ISC",
+  "main": "lib/mst-linked-list.js",
+  "umd:main": "lib/mst-linked-list.umd.js",
+  "module": "lib/mst-linked-list.module.js",
+  "browser": {
+    "./lib/mst-linked-list.js": "./lib/mst-linked-list.js",
+    "./lib/mst-linked-list.module.js": "./lib/mst-linked-list.module.js"
+  },
+  "unpkg": "lib/mst-linked-list.umd.min.js",
+  "jsnext:main": "lib/mst-linked-list.module.js",
+  "react-native": "lib/mst-linked-list.module.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "crean": "rm -rf lib/",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --verbose",
+    "lint": "eslint --ext .js src",
+    "lint:fix": "eslint --fix --ext .js src"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "@mst-ds/mst-jest": "^0.0.2",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.10.0",
+    "jest": "^26.1.0",
+    "jest-cli": "^26.1.0",
+    "mobx": "^5.15.4",
+    "mobx-state-tree": "^3.17.2",
+    "rollup": "^2.21.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "peerDependencies": {
+    "mobx": ">=4.8.0 <5.0.0 || >=5.8.0 <6.0.0",
+    "mobx-state-tree": "3.17.2"
+  }
+}

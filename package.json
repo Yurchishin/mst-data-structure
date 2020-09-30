@@ -1,0 +1,31 @@
+{
+  "name": "@mst-ds/root",
+  "author": "Yurchishin",
+  "description": "> TODO: description",
+  "license": "ISC",
+  "homepage": "https://github.com/Yurchishin/mst-data-structure",
+  "scripts": {
+    "crean": "lerna run crean --stream",
+    "build": "lerna run build --stream",
+    "build:watch": "lerna run build:watch --parallel",
+    "lint": "lerna run lint --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "release:patch": "lerna version patch --no-push",
+    "release:minor": "lerna version minor --no-push",
+    "release:major": "lerna version major --no-push",
+    "release:version": "lerna version --conventional-commits --no-push",
+    "release:publish": "lerna publish",
+    "dependencies:link": "lerna link",
+    "dependencies:clean": "lerna clean --yes",
+    "dependencies:install": "lerna exec --stream npm install",
+    "dependencies:bootstrap": "lerna bootstrap",
+    "dependencies:bootstrap-link": "npm run dependencies:bootstrap && npm run dependencies:link"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1"
+  }
+}

@@ -1,0 +1,10 @@
+__test__
+src
+.babelrc
+.eslintignore
+.eslintrc
+coverage
+.gitignore
+.npmignore
+jest.config.js
+rollup.config.js
