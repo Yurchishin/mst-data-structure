@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree';
-import { onSnapshotAggregation, createMSTSnapshot } from '@mst/mst-jest';
+import { onSnapshotAggregation, createMSTSnapshot } from '@mst-ds/mst-jest';
 import Stack from '../src/index';
 
 describe('Stack', () => {

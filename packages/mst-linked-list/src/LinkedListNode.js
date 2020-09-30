@@ -1,4 +1,4 @@
-import { types } from "@mst/mst-core";
+import { types } from "mobx-state-tree";
 
 export const maybeNullReference = (subType, options = {}) => {
     const refType = types.reference(subType, options);
