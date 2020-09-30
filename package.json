@@ -35,5 +35,8 @@
     "reactive",
     "state management",
     "data structure"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
