@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DoublyLinkedListNode actions append 1`] = `
+exports[`DoublyLinkedList actions append 1`] = `
 Array [
   Object {
     "head": "1",
@@ -59,7 +59,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions deleteHead 1`] = `
+exports[`DoublyLinkedList actions deleteHead 1`] = `
 Array [
   Object {
     "head": "1",
@@ -183,7 +183,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions deleteTail 1`] = `
+exports[`DoublyLinkedList actions deleteTail 1`] = `
 Array [
   Object {
     "head": "1",
@@ -307,7 +307,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions fromArray 1`] = `
+exports[`DoublyLinkedList actions fromArray 1`] = `
 Array [
   Object {
     "head": "1",
@@ -348,7 +348,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions prepend 1`] = `
+exports[`DoublyLinkedList actions prepend 1`] = `
 Array [
   Object {
     "head": "3",
@@ -407,7 +407,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions remove head 1`] = `
+exports[`DoublyLinkedList actions remove head 1`] = `
 Array [
   Object {
     "head": "1",
@@ -514,7 +514,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions remove head and tail 1`] = `
+exports[`DoublyLinkedList actions remove head and tail 1`] = `
 Array [
   Object {
     "head": "1",
@@ -536,7 +536,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions remove middle 1`] = `
+exports[`DoublyLinkedList actions remove middle 1`] = `
 Array [
   Object {
     "head": "1",
@@ -613,7 +613,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions remove tail 1`] = `
+exports[`DoublyLinkedList actions remove tail 1`] = `
 Array [
   Object {
     "head": "1",
@@ -707,7 +707,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode actions reverse 1`] = `
+exports[`DoublyLinkedList actions reverse 1`] = `
 Array [
   Object {
     "head": "1",
@@ -850,7 +850,7 @@ Array [
 ]
 `;
 
-exports[`DoublyLinkedListNode model create in model(Todo) 1`] = `
+exports[`DoublyLinkedList model create in model(Todo) 1`] = `
 Object {
   "todos": Object {
     "head": "1",
@@ -888,7 +888,7 @@ Object {
 }
 `;
 
-exports[`DoublyLinkedListNode model create in model(int) 1`] = `
+exports[`DoublyLinkedList model create in model(int) 1`] = `
 Object {
   "numbers": Object {
     "head": null,
@@ -898,7 +898,7 @@ Object {
 }
 `;
 
-exports[`DoublyLinkedListNode model create(int) 1`] = `
+exports[`DoublyLinkedList model create(int) 1`] = `
 Object {
   "head": null,
   "nodes": Object {},

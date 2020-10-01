@@ -1,11 +1,12 @@
 import { types } from 'mobx-state-tree';
 import { onSnapshotAggregation, createMSTSnapshot } from '@mst-ds/mst-jest';
-import DoublyLinkedListNode from '../src/index';
+import { DoublyLinkedList, DoublyLinkedListNode } from '../src/index';
 
-describe('DoublyLinkedListNode', () => {
+describe('DoublyLinkedList', () => {
     describe('model', () => {
         it('create(int)', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             createMSTSnapshot(list)
 
@@ -13,8 +14,10 @@ describe('DoublyLinkedListNode', () => {
             expect(list.tail).toBeNull();
         });
         it('create in model(int)', () => {
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+
             const rootStore = types.model('RootStore', {
-                numbers: DoublyLinkedListNode('Int', types.integer),
+                numbers: DoublyLinkedList('Int', IntDoublyLinkedListNode),
             }).create()
 
             createMSTSnapshot(rootStore)
@@ -25,8 +28,10 @@ describe('DoublyLinkedListNode', () => {
                 active: types.boolean,
             })
 
+            const TodoDoublyLinkedListNode = DoublyLinkedListNode('Todo', Todo);
+
             const rootStore = types.model('RootStore', {
-                todos: DoublyLinkedListNode('Todo', Todo),
+                todos: DoublyLinkedList('Todo', TodoDoublyLinkedListNode),
             }).create()
 
             rootStore.todos.append('1', {
@@ -47,7 +52,8 @@ describe('DoublyLinkedListNode', () => {
     })
     describe('actions', () => {
         it('prepend', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -84,7 +90,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('append', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -120,7 +127,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('remove head and tail', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -146,7 +154,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('remove head', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -182,7 +191,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('remove middle', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -209,7 +219,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('remove tail', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -245,7 +256,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('fromArray', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -267,7 +279,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('deleteTail', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -293,7 +306,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('deleteHead', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -319,7 +333,8 @@ describe('DoublyLinkedListNode', () => {
         });
 
         it('reverse', () => {
-            const list = DoublyLinkedListNode('Int', types.integer).create();
+            const IntDoublyLinkedListNode = DoublyLinkedListNode('Int', types.integer);
+            const list = DoublyLinkedList('Int', IntDoublyLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 

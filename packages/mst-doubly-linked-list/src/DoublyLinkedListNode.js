@@ -1,17 +1,15 @@
-import { types } from "mobx-state-tree";
+import { types, isReferenceType } from 'mobx-state-tree';
 
-export const maybeNullReference = (subType, options = {}) => {
-    const refType = types.reference(subType, options);
+export const maybeNullReference = (subType, options = {}) => types.maybeNull(types.reference(subType, options))
 
-    return types.maybeNull(refType);
-};
-
-const DoublyLinkedListNode = (name, Type, options= {}) => {
-    const { identifierNumber = false } = options;
+const DoublyLinkedListNode = (name, Type) => {
+    if(isReferenceType(Type)) {
+        throw new Error('"mst-doubly-linked-list" does not support reference types')
+    }
 
     const NodeType = types
         .model(`${name}DoublyLinkedListNode`, {
-            id: identifierNumber ? types.identifierNumber : types.identifier,
+            id: types.identifier,
             value: Type,
             next: maybeNullReference(types.late(() => NodeType)),
             previous: maybeNullReference(types.late(() => NodeType)),

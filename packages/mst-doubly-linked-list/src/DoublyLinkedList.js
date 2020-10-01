@@ -1,24 +1,20 @@
-import { types, isReferenceType } from 'mobx-state-tree';
+import { types } from 'mobx-state-tree';
 import { values } from 'mobx';
-import DoublyLinkedListNode from './DoublyLinkedListNode'
 
 export const optionalMap = (Type, optionalValues) => types.optional(types.map(Type), {}, optionalValues)
 export const optionalNull = (Type, optionalValues) => types.optional(types.maybeNull(Type), null, optionalValues)
 
-const DoublyLinkedList = (name = '', Type, options = {}) => {
-    const NodeType = DoublyLinkedListNode(name, Type, options);
-
-    if(isReferenceType(Type)) {
-        throw new Error('"mst-doubly-linked-list" does not support reference types')
-    }
-
+const DoublyLinkedList = (name = '', Node) => {
     const DoublyLinkedListModel =  types
         .model(`${name}DoublyLinkedList`, {
-            head: optionalNull(types.reference(NodeType)),
-            tail: optionalNull(types.reference(NodeType)),
-            nodes: optionalMap(NodeType),
+            head: optionalNull(types.reference(Node)),
+            tail: optionalNull(types.reference(Node)),
+            nodes: optionalMap(Node),
         })
         .views(self => ({
+            getNode(id) {
+                return self.nodes.get(id) || null;
+            },
             get(id) {
                 return self.nodes.get(id).value || null;
             },
@@ -122,7 +118,7 @@ const DoublyLinkedList = (name = '', Type, options = {}) => {
             };
 
             const deleteTail = () => {
-                if(!self.head) return self;
+                if (!self.head) return self;
                 const id = self.tail.id
 
                 if (self.head === self.tail) {
