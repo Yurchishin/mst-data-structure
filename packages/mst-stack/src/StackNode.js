@@ -1,4 +1,4 @@
-import {isReferenceType, types} from "mobx-state-tree";
+import { types, isReferenceType } from "mobx-state-tree";
 
 export const maybeNullReference = (subType, options = {}) => types.maybeNull(types.reference(subType, options))
 
