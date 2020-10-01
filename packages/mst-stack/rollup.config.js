@@ -11,7 +11,7 @@ const config = (outFile, format, mode) =>
             mobx: "mobx",
         },
         umdName: "mstStack",
-        external: ["mobx", "mobx-state-tree", "@mst-ds/mst-linked-list"],
+        external: ["mobx", "mobx-state-tree"],
     })
 
 export default [

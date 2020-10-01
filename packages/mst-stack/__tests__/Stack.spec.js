@@ -1,17 +1,20 @@
 import { types } from 'mobx-state-tree';
 import { onSnapshotAggregation, createMSTSnapshot } from '@mst-ds/mst-jest';
-import Stack from '../src/index';
+import { Stack, StackNode } from '../src/index';
 
 describe('Stack', () => {
     describe('model', () => {
         it('create(int)', () => {
-            const list = Stack('Int', types.integer).create();
+            const IntStackNode = StackNode('Int', types.integer)
+            const list = Stack('Int', IntStackNode).create();
 
             createMSTSnapshot(list)
         });
         it('create in model(int)', () => {
+            const IntStackNode = StackNode('Int', types.integer)
+
             const rootStore = types.model('RootStore', {
-                numbers: Stack('Int', types.integer),
+                numbers: Stack('Int', IntStackNode),
             }).create()
 
             createMSTSnapshot(rootStore)
@@ -22,8 +25,10 @@ describe('Stack', () => {
                 active: types.boolean,
             })
 
+            const TodoStackNode = StackNode('Todo', Todo)
+
             const rootStore = types.model('RootStore', {
-                todos: Stack('Todo', Todo),
+                todos: Stack('Todo', TodoStackNode),
             }).create()
 
             rootStore.todos
@@ -46,25 +51,27 @@ describe('Stack', () => {
     })
     describe('actions', () => {
         it('push', () => {
-            const list = Stack('Int', types.integer).create();
+            const IntStackNode = StackNode('Int', types.integer)
+            const list = Stack('Int', IntStackNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
             expect(list.isEmpty).toBe(true);
 
             list.push('3', 3);
-            expect(list.peekId).toBe('3');
+            expect(list.peekNode.id).toBe('3');
 
             list.push('2', 2)
-            expect(list.peekId).toBe('2');
+            expect(list.peekNode.id).toBe('2');
 
             list.push('1', 1)
-            expect(list.peekId).toBe('1');
+            expect(list.peekNode.id).toBe('1');
 
             disposer()
         });
         it('pop', () => {
-            const list = Stack('Int', types.integer).create();
+            const IntStackNode = StackNode('Int', types.integer)
+            const list = Stack('Int', IntStackNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -75,7 +82,7 @@ describe('Stack', () => {
                 .push('1', 1)
                 .pop()
 
-            expect(list.peekId).toBe('2');
+            expect(list.peekNode.id).toBe('2');
 
             disposer()
         });

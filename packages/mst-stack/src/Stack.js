@@ -1,53 +1,81 @@
-import { types, isReferenceType } from 'mobx-state-tree';
-import LinkedList from '@mst/mst-linked-list';
+import { types } from 'mobx-state-tree';
 
-const Stack = (name = '', Type, options = {}) => {
-    if (isReferenceType(Type)) {
-        throw new Error('"mst-stack" does not support reference types')
-    }
+export const optionalMap = (Type, optionalValues) => types.optional(types.map(Type), {}, optionalValues)
+export const optionalNull = (Type, optionalValues) => types.optional(types.maybeNull(Type), null, optionalValues)
 
+const Stack = (name = '', NodeType) => {
     const StackModel = types
         .model(`${name}Stack`, {
-            linkedList: LinkedList(`${name}Stack`, Type, options),
+            head: optionalNull(types.reference(NodeType)),
+            nodes: optionalMap(NodeType),
         })
         .views(self => ({
+            getNode(id) {
+                return self.nodes.get(id) || null;
+            },
+            get(id) {
+                return self.nodes.get(id).value || null;
+            },
             get values() {
-                return self.linkedList.values
+                return values(self.nodes)
             },
             get entries() {
-                return self.linkedList.entries
+                return self.values.map(node => [node.id, node.value]);
             },
             get array() {
-                return self.linkedList.array
+                return self.values.map(node => node.value);
             },
             get isEmpty() {
-                return self.linkedList.isEmpty
-            },
-            toString(callback) {
-                return self.linkedList.toString(callback)
+                return self.nodes.size === 0
             },
             get peek() {
-                return !self.isEmpty ? self.linkedList.head : null
+                return !self.isEmpty ? self.head.value : null
+            },
+            get peekNode() {
+                return !self.isEmpty ? self.head : null
             },
             get peekPair() {
-                return self.peek ? [self.peek.id, self.peek.value] : null
+                return self.peekNode ? [self.peekNode.id, self.peekNode.value] : null
             },
-            get peekValue() {
-                return self.peekPair ? self.peekPair[1] : null
-            },
-            get peekId() {
-                return self.peekPair ? self.peekPair[0] : null
+            toString(callback) {
+                return self.array.map(node => node.toString(callback)).toString();
             },
         }))
         .actions(self =>  {
             const push = (id, value) => {
-                self.linkedList.prepend(id, value);
-                return self
+                if(!self.head) {
+                    self.nodes.set(id, {
+                        id,
+                        value,
+                        next: null,
+                    });
+                }
+                else {
+                    self.nodes.set(id, {
+                        id,
+                        value,
+                        next: self.head.id,
+                    });
+                }
+
+                self.head = id;
+
+                return self;
             }
 
             const pop = () => {
-                self.linkedList.deleteHead();
-                return self
+                if (!self.head) return self
+
+                const id = self.head.id
+
+                if (self.head.next) self.head = self.head.next;
+                else {
+                    self.head = null;
+                }
+
+                self.nodes.delete(id);
+
+                return self;
             }
 
             return {
