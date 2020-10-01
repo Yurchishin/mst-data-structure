@@ -17,6 +17,9 @@ const Stack = (name = '', NodeType) => {
             get(id) {
                 return self.nodes.get(id).value || null;
             },
+            has(id) {
+                return self.nodes.has(id);
+            },
             get values() {
                 return values(self.nodes)
             },
