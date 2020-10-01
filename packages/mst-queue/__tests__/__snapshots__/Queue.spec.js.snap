@@ -3,76 +3,68 @@
 exports[`Queue actions dequeue 1`] = `
 Array [
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": null,
-          "value": 1,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
       },
-      "tail": "1",
     },
+    "tail": "1",
   },
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": "2",
-          "value": 1,
-        },
-        "2": Object {
-          "id": "2",
-          "next": null,
-          "value": 2,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
       },
-      "tail": "2",
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
     },
+    "tail": "2",
   },
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": "2",
-          "value": 1,
-        },
-        "2": Object {
-          "id": "2",
-          "next": "3",
-          "value": 2,
-        },
-        "3": Object {
-          "id": "3",
-          "next": null,
-          "value": 3,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
       },
-      "tail": "3",
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
     },
+    "tail": "3",
   },
   Object {
-    "linkedList": Object {
-      "head": "2",
-      "nodes": Object {
-        "2": Object {
-          "id": "2",
-          "next": "3",
-          "value": 2,
-        },
-        "3": Object {
-          "id": "3",
-          "next": null,
-          "value": 3,
-        },
+    "head": "2",
+    "nodes": Object {
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
       },
-      "tail": "3",
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
     },
+    "tail": "3",
   },
 ]
 `;
@@ -80,58 +72,52 @@ Array [
 exports[`Queue actions enqueue 1`] = `
 Array [
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": null,
-          "value": 1,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": 1,
       },
-      "tail": "1",
     },
+    "tail": "1",
   },
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": "2",
-          "value": 1,
-        },
-        "2": Object {
-          "id": "2",
-          "next": null,
-          "value": 2,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
       },
-      "tail": "2",
+      "2": Object {
+        "id": "2",
+        "next": null,
+        "value": 2,
+      },
     },
+    "tail": "2",
   },
   Object {
-    "linkedList": Object {
-      "head": "1",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": "2",
-          "value": 1,
-        },
-        "2": Object {
-          "id": "2",
-          "next": "3",
-          "value": 2,
-        },
-        "3": Object {
-          "id": "3",
-          "next": null,
-          "value": 3,
-        },
+    "head": "1",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": "2",
+        "value": 1,
       },
-      "tail": "3",
+      "2": Object {
+        "id": "2",
+        "next": "3",
+        "value": 2,
+      },
+      "3": Object {
+        "id": "3",
+        "next": null,
+        "value": 3,
+      },
     },
+    "tail": "3",
   },
 ]
 `;
@@ -139,28 +125,26 @@ Array [
 exports[`Queue model create in model(Todo) 1`] = `
 Object {
   "todos": Object {
-    "linkedList": Object {
-      "head": "2",
-      "nodes": Object {
-        "1": Object {
-          "id": "1",
-          "next": null,
-          "value": Object {
-            "active": false,
-            "name": "name3",
-          },
-        },
-        "2": Object {
-          "id": "2",
-          "next": "1",
-          "value": Object {
-            "active": true,
-            "name": "name2",
-          },
+    "head": "2",
+    "nodes": Object {
+      "1": Object {
+        "id": "1",
+        "next": null,
+        "value": Object {
+          "active": false,
+          "name": "name3",
         },
       },
-      "tail": "1",
+      "2": Object {
+        "id": "2",
+        "next": "1",
+        "value": Object {
+          "active": true,
+          "name": "name2",
+        },
+      },
     },
+    "tail": "1",
   },
 }
 `;
@@ -168,21 +152,17 @@ Object {
 exports[`Queue model create in model(int) 1`] = `
 Object {
   "numbers": Object {
-    "linkedList": Object {
-      "head": null,
-      "nodes": Object {},
-      "tail": null,
-    },
+    "head": null,
+    "nodes": Object {},
+    "tail": null,
   },
 }
 `;
 
 exports[`Queue model create(int) 1`] = `
 Object {
-  "linkedList": Object {
-    "head": null,
-    "nodes": Object {},
-    "tail": null,
-  },
+  "head": null,
+  "nodes": Object {},
+  "tail": null,
 }
 `;

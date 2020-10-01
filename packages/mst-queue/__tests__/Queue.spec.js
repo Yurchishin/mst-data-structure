@@ -1,17 +1,20 @@
 import { types } from 'mobx-state-tree';
 import { onSnapshotAggregation, createMSTSnapshot } from '@mst-ds/mst-jest';
-import Queue from '../src/index';
+import { Queue, QueueNode } from '../src/index';
 
 describe('Queue', () => {
     describe('model', () => {
         it('create(int)', () => {
-            const list = Queue('Int', types.integer).create();
+            const IntQueueNode = QueueNode('Int', types.integer);
+            const list = Queue('Int', IntQueueNode).create();
 
             createMSTSnapshot(list)
         });
         it('create in model(int)', () => {
+            const IntQueueNode = QueueNode('Int', types.integer);
+
             const rootStore = types.model('RootStore', {
-                numbers: Queue('Int', types.integer),
+                numbers: Queue('Int', IntQueueNode),
             }).create()
 
             createMSTSnapshot(rootStore)
@@ -22,8 +25,10 @@ describe('Queue', () => {
                 active: types.boolean,
             })
 
+            const TodoQueueNode = QueueNode('Int', Todo);
+
             const rootStore = types.model('RootStore', {
-                todos: Queue('Todo', Todo),
+                todos: Queue('Todo', TodoQueueNode),
             }).create()
 
             rootStore.todos
@@ -46,25 +51,27 @@ describe('Queue', () => {
     })
     describe('actions', () => {
         it('enqueue', () => {
-            const list = Queue('Int', types.integer).create();
+            const IntQueueNode = QueueNode('Int', types.integer);
+            const list = Queue('Int', IntQueueNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
             expect(list.isEmpty).toBe(true);
 
             list.enqueue('1', 1);
-            expect(list.peekId).toBe('1');
+            expect(list.peekNode.id).toBe('1');
 
             list.enqueue('2', 2)
-            expect(list.peekId).toBe('1');
+            expect(list.peekNode.id).toBe('1');
 
             list.enqueue('3', 3)
-            expect(list.peekId).toBe('1');
+            expect(list.peekNode.id).toBe('1');
 
             disposer()
         });
         it('dequeue', () => {
-            const list = Queue('Int', types.integer).create();
+            const IntQueueNode = QueueNode('Int', types.integer);
+            const list = Queue('Int', IntQueueNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -75,7 +82,7 @@ describe('Queue', () => {
                 .enqueue('3', 3)
                 .dequeue()
 
-            expect(list.peekId).toBe('2');
+            expect(list.peekNode.id).toBe('2');
 
             disposer()
         });
