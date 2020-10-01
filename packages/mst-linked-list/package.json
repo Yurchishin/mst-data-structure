@@ -1,6 +1,6 @@
 {
   "name": "@mst-ds/mst-linked-list",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Yurchishin",
   "homepage": "https://github.com/Yurchishin/mst-data-structure",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.4",
-    "@mst-ds/mst-jest": "^0.1.0",
+    "@mst-ds/mst-jest": "^1.0.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.1.0",
     "cross-env": "^7.0.2",
