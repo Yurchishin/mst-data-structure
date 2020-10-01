@@ -1,24 +1,20 @@
-import { types, isReferenceType } from 'mobx-state-tree';
+import { types } from 'mobx-state-tree';
 import { values } from 'mobx';
-import LinkedListNode from './LinkedListNode'
 
 export const optionalMap = (Type, optionalValues) => types.optional(types.map(Type), {}, optionalValues)
 export const optionalNull = (Type, optionalValues) => types.optional(types.maybeNull(Type), null, optionalValues)
 
-const LinkedList = (name = '', Type, options = {}) => {
-    if (isReferenceType(Type)) {
-        throw new Error('"mst-linked-list" does not support reference types')
-    }
-
-    const NodeType = LinkedListNode(name, Type, options);
-
+const LinkedList = (name = '', Node) => {
     const LinkedListModel =  types
         .model(`${name}LinkedList`, {
-            head: optionalNull(types.reference(NodeType)),
-            tail: optionalNull(types.reference(NodeType)),
-            nodes: optionalMap(NodeType),
+            head: optionalNull(types.reference(Node)),
+            tail: optionalNull(types.reference(Node)),
+            nodes: optionalMap(Node),
         })
         .views(self => ({
+            getNode(id) {
+                return self.nodes.get(id) || null;
+            },
             get(id) {
                 return self.nodes.get(id).value || null;
             },

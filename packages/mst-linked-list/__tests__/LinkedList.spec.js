@@ -1,11 +1,12 @@
 import { types } from 'mobx-state-tree';
 import { onSnapshotAggregation, createMSTSnapshot } from '@mst-ds/mst-jest';
-import LinkedList from '../src/index';
+import { LinkedList, LinkedListNode } from '../src/index';
 
 describe('LinkedList', () => {
     describe('model', () => {
         it('create(int)', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             createMSTSnapshot(list)
 
@@ -13,8 +14,10 @@ describe('LinkedList', () => {
             expect(list.tail).toBeNull();
         });
         it('create in model(int)', () => {
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+
             const rootStore = types.model('RootStore', {
-                numbers: LinkedList('Int', types.integer),
+                numbers: LinkedList('Int', IntLinkedListNode),
             }).create()
 
             createMSTSnapshot(rootStore)
@@ -25,8 +28,10 @@ describe('LinkedList', () => {
                 active: types.boolean,
             })
 
+            const TodoLinkedListNode = LinkedListNode(Todo, Todo);
+
             const rootStore = types.model('RootStore', {
-                todos: LinkedList('Todo', Todo),
+                todos: LinkedList('Int', TodoLinkedListNode),
             }).create()
 
             rootStore.todos.append('1', {
@@ -47,7 +52,8 @@ describe('LinkedList', () => {
     })
     describe('actions', () => {
         it('prepend', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -84,7 +90,8 @@ describe('LinkedList', () => {
         });
 
         it('append', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -120,7 +127,8 @@ describe('LinkedList', () => {
         });
 
         it('remove head and tail', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -146,7 +154,8 @@ describe('LinkedList', () => {
         });
 
         it('remove head', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -182,7 +191,8 @@ describe('LinkedList', () => {
         });
 
         it('remove middle', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -209,7 +219,8 @@ describe('LinkedList', () => {
         });
 
         it('remove tail', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -245,7 +256,8 @@ describe('LinkedList', () => {
         });
 
         it('fromArray', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -267,7 +279,8 @@ describe('LinkedList', () => {
         });
 
         it('deleteTail', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -293,7 +306,8 @@ describe('LinkedList', () => {
         });
 
         it('deleteHead', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
@@ -319,7 +333,8 @@ describe('LinkedList', () => {
         });
 
         it('reverse', () => {
-            const list = LinkedList('Int', types.integer).create();
+            const IntLinkedListNode = LinkedListNode('Int', types.integer);
+            const list = LinkedList('Int', IntLinkedListNode).create();
 
             const disposer = onSnapshotAggregation(list)
 
